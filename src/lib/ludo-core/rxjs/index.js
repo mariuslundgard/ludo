@@ -12,7 +12,7 @@ export function mount (elm: any, props: Props): BrowserContext {
 
   const play$ = Observable.fromEvent(elm, 'play').map(() => true)
   const pause$ = Observable.fromEvent(elm, 'pause').map(() => false)
-  const playing$ = Observable.merge(play$, pause$).startWith(props.autoPlay)
+  const playing$ = Observable.merge(play$, pause$).startWith(false)
   const duration$ = Observable.fromEvent(elm, 'durationchange')
     .map(() => elm.duration)
     .startWith(elm.duration || 0)

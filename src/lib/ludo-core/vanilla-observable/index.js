@@ -13,7 +13,7 @@ export function mount (elm: any, props: Props): BrowserContext {
 
   const play$ = map(() => true, fromEvent(elm, 'play'))
   const pause$ = map(() => false, fromEvent(elm, 'pause'))
-  const playing$ = merge(play$, pause$)
+  const playing$ = startWith(false, merge(play$, pause$))
   const duration$ = startWith(elm.duration, map(() => elm.duration, fromEvent(elm, 'durationchange')))
   const time$ = startWith(elm.currentTime, map(() => elm.currentTime, fromEvent(elm, 'timeupdate')))
   const bufferRanges$ = startWith(getBufferRanges(elm), map(() => getBufferRanges(elm), fromEvent(elm, 'progress')))
