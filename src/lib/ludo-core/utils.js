@@ -7,8 +7,8 @@ export function getBufferRanges (elm: HTMLVideoElement): BufferRange[] {
 
   for (let i = 0; i < elm.buffered.length; i += 1) {
     ranges.push({
-      start: elm.buffered.start(0),
-      end: elm.buffered.end(0)
+      start: elm.buffered.start(i),
+      end: elm.buffered.end(i)
     })
   }
 
