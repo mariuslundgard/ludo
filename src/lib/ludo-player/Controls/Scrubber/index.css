@@ -1,0 +1,52 @@
+.scrubber {
+  position: relative;
+}
+
+.scrubber__time {
+  pointer-events: none;
+  position: absolute;
+  top: 2px;
+  line-height: 23px;
+  font-size: 12px;
+  font-family: Menlo;
+  z-index: 1;
+  pointer-events: none;
+
+  &.scrubber__time--left {
+    left: 0;
+  }
+
+  &.scrubber__time--right {
+    right: 0;
+  }
+}
+
+.scrubber__bar {
+  position: relative;
+  height: 44px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.scrubber__bgBar,
+.scrubber__bufferBar,
+.scrubber__timeBar {
+  position: absolute;
+  top: 28px;
+  background: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 6px;
+}
+
+.scrubber__timeBar {
+  background: #fff;
+}
+
+.scrubber__playhead {
+  position: absolute;
+  top: 24px;
+  width: 4px;
+  height: 14px;
+  background: #fff;
+  transform: translateX(-2px);
+}

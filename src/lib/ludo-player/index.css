@@ -1,0 +1,16 @@
+.videoPlayer {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding-bottom: calc(9 / 16 * 100%);
+  width: 100%;
+  overflow: hidden;
+
+  & video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    vertical-align: top;
+  }
+}
