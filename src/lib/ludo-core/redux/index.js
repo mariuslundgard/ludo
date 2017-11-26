@@ -42,6 +42,12 @@ export function mount (elm: any, props: Props): BrowserContext {
 
   function subscribe (observer) {
     observers.push(observer)
+
+    return {
+      unsubscribe () {
+        observers.splice(observers.indexOf(observer), 1)
+      }
+    }
   }
 
   const handlePlay = () => store.dispatch({type: 'PLAY'})
